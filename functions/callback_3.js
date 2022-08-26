@@ -8,6 +8,7 @@ const primeiraLetra = texto => texto[0]
 const letras = nomes.map(primeiraLetra)
 console.log(nomes, letras)
 
+//MAP() #3
 const carrinho = [
     {nome: 'Caneta', qtde: 10, preco: 7.99},
     {nome: 'Impressora', qtde: 0, preco: 649.50},
@@ -15,3 +16,14 @@ const carrinho = [
     {nome: 'Lapis', qtde: 3, preco: 5.82},
     {nome: 'Tesoura', qtde: 1, preco: 19.20}
 ]
+
+const getNome = item => item.nome
+console.log(carrinho.map(function(value){
+    return getNome(value)
+}))
+//resumindo a função de cima, pois nao tem necessiade de passar os 3 parametros do Map(fn, index, array)
+console.log(carrinho.map(getNome))
+
+const getTotal = item => item.qtde * item.preco
+const totais = carrinho.map(getTotal)
+console.log(totais)
